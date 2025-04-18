@@ -137,3 +137,10 @@ export default function BlogPostPage({ params }: Props) {
     </div>
   );
 } 
+
+export async function generateStaticParams() {
+  // Generate static params for all blog posts
+  return blogPosts.map(post => ({
+    slug: post.slug, // Ensure this matches the dynamic route parameter
+  }));
+}
